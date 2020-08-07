@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOME DELIVERY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lemonada&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .navbar-nav a {
+
+      font-size: 16px;
+      font-weight: bold;
+      padding-left: 12px;
+      padding-right: 12px;
+      font-family: 'Roboto', sans-serif;
+      text-transform: uppercase;
+    }
+
+    .navbar-light .navbar-brand {
+      color: white !important;
+      font-size: 2.4rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+      color: white !important;
+    }
+
+    .navbar-nav {
+      text-align: center;
+    }
+
+    .nav-link {
+
+      padding: .2rem 1rem;
+
+    }
+
+  
+    .nav-item {
+      padding: 27px;
+      letter-spacing: 2px;
+    }
+    .navbar-brand{
+      margin-left: 15px;
+      padding-top: 5px;
+      font-size: 2.3rem;
+      color: white !important;
+      font-weight: 300!important;
+      font-family: 'Lemonada', cursive;
+    }
+    .navbar-brand:hover {
+      color: white !important;
+    }
+
+    .btnn {
+      background: white !important;
+      color: #051937;
+
+      padding-left: 6px;
+      padding-right: 6px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-radius: 4px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btnn:hover {
+      text-decoration: none;
+      color: rgba(242, 47, 70, .85);
+    }
+
+    section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.3) url('food14.webp') no-repeat;
+      background-size: cover;
+      background-blend-mode: darken;
+
+    }
+
+    section .container {
+      position: relative;
+      width: 1100px;
+      height: 540px;
+      background: #fff;
+      box-shadow: -1px 1px 10px 7px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      margin-top: 80px;
+    }
+
+    section .container .user {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+    }
+
+    section .container .user .imgbx {
+      position: relative;
+      width: 35%;
+      height: 100%;
+      
+      transition: 0.5s;
+      background: rgba(0, 0, 0, 0.3) url('burger.webp') no-repeat center;
+      background-size: cover;
+      background-blend-mode: darken;
+
+    }
+
+    
+    section .container .user .imgbx .para h3,
+    .para ul {
+      text-align: left;
+      margin: 17px 7px 1rem 13px;
+      color: white;
+      text-decoration: none;
+    }
+
+    section .container .user .imgbx .para ul {
+      margin-left: 76px;
+      list-style: none;
+      text-decoration: none;
+    }
+
+    section .container .user .imgbx img {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    section .container .user .formbx {
+      position: relative;
+      height: 100%;
+      width: 70%;
+      background: #fff;
+     
+
+
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      transition: 0.5s;
+
+    }
+
+    .row100 {
+      position: relative;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    section .container .user .formbx form h2 {
+      font-size: 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 17px;
+      color: #555;
+    }
+
+    section .container .user .formbx form input {
+      position: relative;
+      width: 100%;
+      padding: 10px;
+      background: #f5f5f5;
+      color: #333;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      margin: 8px 0;
+      font-size: 14px;
+      letter-spacing: 1px;
+      font-weight: 300;
+      transition: all 0.3s ease;
+    }
+
+    section .container .user .formbx form input:focus {
+      border-color: dodgerblue;
+      box-shadow: 0 0 5px 0 dodgerblue;
+    }
+
+    section .container .user .formbx form select {
+      position: relative;
+      width: 100%;
+      padding: 10px;
+      background: #f5f5f5;
+      color: #333;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      margin: 8px 0;
+      font-size: 14px;
+      letter-spacing: 1px;
+      font-weight: 300;
+    }
+
+    section .container .user .formbx form select:focus {
+      border-color: dodgerblue;
+      box-shadow: 0 0 5px 0 dodgerblue;
+    }
+
+    section .container .user .formbx form textarea {
+      position: relative;
+      width: 100%;
+      padding: 10px;
+      background: #f5f5f5;
+      color: #333;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      margin: 8px 0;
+      font-size: 14px;
+      letter-spacing: 1px;
+      font-weight: 300;
+    }
+
+    section .container .user .formbx form textarea:focus {
+      border-color: dodgerblue;
+      box-shadow: 0 0 5px 0 dodgerblue;
+    }
+
+    
+    section .container .user .formbx form button[type="submit"] {
+     
+      width: 100%;
+      background: #677eff;
+      color: #fff;
+      cursor: pointer;
+      font-size: 14px;
+      letter-spacing: 1px;
+      font-weight: 500;
+      transition: 0.5s;
+      padding: 10px;
+      position: relative;
+    }
+
+    input[type="checkbox"]+label {
+      display: block;
+      margin: 0.2em;
+      cursor: pointer;
+      padding: 0.1rem;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    input[type="checkbox"]+label::before {
+      content: "\2714";
+      display: inline-block;
+      border: 0.1em solid black;
+      border-radius: 0.2em;
+      width: 1.3em;
+      height: 1.3em;
+      padding-left: 0.2em;
+      padding-bottom: 1em;
+      margin-right: 0.2em;
+      vertical-align: bottom;
+      color: transparent;
+      transition: 0.2s;
+
+    }
+
+    input[type="checkbox"]:checked+label:before {
+      background-color: blue;
+      border-color: blue;
+      color: #fff;
+    }
+
+    input[type="checkbox"]+label:active:before {
+      transform: scale(0);
+    }
+
+    input[type="checkbox"]:disabled+label:before {
+      transform: scale(1);
+      border-color: #aaa;
+    }
+
+    input[type="checkbox"]:checked:disabled+label:before {
+      transform: scale(1);
+      background-color: #bfb;
+      border-color: #bfb;
+    }
+
+    .text {
+      font-weight: 600;
+    }
+
+    .order {
+      font-family: 25px;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    .brand {
+
+      margin-top: 2px;
+
+    }
+
+    .here {
+      color: white;
+      text-align: left;
+      margin: 7px 7px 1rem 34px;
+
+    }
+
+    .username {
+      text-transform: uppercase;
+
+    }
+
+    .dropdown-submenu {
+      position: relative;
+
+    }
+
+    .dropdown-submenu a::after {
+      transform: rotate(-90deg);
+      position: absolute;
+      right: 6px;
+      top: .8em;
+    }
+
+    .dropdown-submenu .dropdown-menu {
+      top: 0;
+      left: 100%;
+      margin-left: .1rem;
+      margin-right: .1rem;
+    }
+
+    @media (max-width: 770px) {
+      .navbar-toggler {
+        width: 57px;
+        height: 34px;
+
+        outline: white;
+      }
+
+      .navbar-toggler .line {
+        width: 100%;
+        float: left;
+        height: 2px;
+        background-color: #fff;
+        margin-bottom: 5px;
+      }
+
+      section .container {
+        max-width: 400px;
+        min-height: 800px;
+        margin-top: 20%;
+
+
+      }
+
+      section .container .imgbx {
+        display: none;
+      }
+
+      section .container .user .formbx {
+        width: 100%;
+      }
+
+      .nav-item {
+        background: black;
+        padding: 24px;
+        color: white !important;
+
+
+      }
+
+      .navbar-toggler {
+        border: 2px solid white;
+      }
+
+      .icons {
+        padding: 5px;
+      }
+
+      .navbar {
+        border: none;
+      }
+
+    }
+
+    @media (min-width: 771px) {
+      .fa-home {
+        display: none;
+      }
+
+      .fa-comments-o {
+        display: none;
+      }
+
+      .fa-sign-out {
+        display: none;
+      }
+
+      .fa-google-wallet {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <a class="navbar-brand" href="#">Fork&Knife</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line" style="margin-bottom: 0;"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/"><i class="fa fa-home icons"></i>Home</a>
+        </li>
+
+        <div class="navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-google-wallet icons"
+                  aria-hidden="true"></i> Pricing</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Breakfast</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#"><span class="WebRupee">&#x20B9;</span> 15 /day </a></li>
+                  </ul>
+                </li>
+                <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Lunch</a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-submenu">
+                      <a class="dropdown-item dropdown-toggle" href="#">Vegetarian</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"><span class="WebRupee">&#x20B9;</span> 30 /day</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                      <a class="dropdown-item dropdown-toggle" href="#">Non-Vegetarian</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"><span class="WebRupee">&#x20B9;</span> 35 /day</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Dinner</a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-submenu">
+                      <a class="dropdown-item dropdown-toggle" href="#">Vegetarian</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"><span class="WebRupee">&#x20B9;</span> 25 /day</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                      <a class="dropdown-item dropdown-toggle" href="#">Non vegetarian</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"><span class="WebRupee">&#x20B9;</span> 30 /day</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/feedback"><i class="fa fa-comments-o icons"></i>Feedback</a>
+        </li>
+
+        <li class="nav-item">
+          <a class=" btnn" href="/logout"><i class="fa fa-sign-out icons"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <section>
+
+    <div class="container animate-left">
+      <div class="user signinbx">
+
+        <div class="imgbx">
+          <div class="para">
+            <div class="company-info">
+              <h3 class="brand">Welcome <span class="username"><%= user.username %></span></h3>
+              <h5 class="here">Order Here,</h5>
+              <ul>
+                <li><i class="fa fa-road"></i> Chira Chas, Bokaro</li>
+                <li><i class="fa fa-phone"></i> (+91) 6201334039</li>
+                <li><i class="fa fa-envelope"></i> raks.ab96@gmail.com </li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+        <div class="formbx">
+          <form method="POST" action="send">
+            <h2 class="order">Order Now</h2>
+
+            <div class="row100">
+              <div class="col">
+                <div class="inputBox">
+                  <span class="text">Phone Number :</span>
+                  <input type="tel" name="phone" id="phone" placeholder="">
+
+                  <span class="line"></span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="inputBox">
+                  <span class="text">Date:</span>
+
+                  <input type="date" name="date" id="date" min="2020-01-01" max="2022-01-01">
+                  <span class="line"></span>
+                </div>
+              </div>
+            </div>
+            <div class="row100">
+              <div class="col">
+                <div class="inputBox">
+                  <span class="text">Veg/Non-Veg :</span>
+                  <select name="choose" id="choose">
+                    <option value="Veg">Veg</option>
+                    <option value="Non-Veg">Non-Veg</option>
+                    <option value="Veg(Lunch/Dinner)">Veg(Lunch/Dinner)</option>
+                    <option value="Non-Veg(Lunch/Dinner)">Non-Veg(Lunch/Dinner)</option>
+                    <option value="Non-Veg(Lunch/Dinner)">Non-Veg(Lunch/Dinner)</option>
+                    <option value="Non-Veg(Lunch)/Veg(Dinner)">Non-Veg(Lunch)/Veg(Dinner)</option>
+
+                  </select>
+
+                  <span class="line"></span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="inputBox">
+                  <span class="text">Quantity :</span>
+                  <input type="number" name="quantity" id="quantity" placeholder="ex-1 ,2 ,3......">
+
+                  <span class="line"></span>
+                </div>
+              </div>
+            </div>
+            <div class="row100">
+              <div class="col">
+                <div class="inputBox">
+                  <span class="text">Order At :</span>
+                  <div class="check">
+                    <input type="checkbox" name="breakfast" id="breakfast" value="breakfast"><label
+                      for="breakfast">Breakfast</label>
+                    <input type="checkbox" name="dinner" id="dinner" value="dinner"><label for="dinner">Dinner</label>
+                    <input type="checkbox" name="lunch" id="lunch" value="lunch"><label for="lunch">Lunch</label></div>
+
+                  <span class="line"></span>
+                </div>
+              </div>
+            </div>
+            <div class="row100">
+              <div class="col">
+                <div class="inputBox textarea">
+                  <span class="text">Type Your Address here... :</span>
+                  <textarea name="message" id="message"></textarea>
+
+                  <span class="line"></span>
+                </div>
+              </div>
+            </div>
+            <div class="row100">
+              <div class="col">
+               
+                <button type="submit" id="submit">Submit</button>
+              </div>
+            </div>
+
+
+        </div>
+
+      
+
+        </form>
+      </div>
+    </div>
+    </div>
+  </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script type="text/javascript">
+    $("#submit").click(function () {
+      var phone = $("#phone").val();
+      var date = $("#date").val();
+      var choose = $("#choose").val();
+      var message = $("#message").val();
+      var quantity = $("#quantity").val();
+
+      if (phone == '' || date == '' || choose == '' || quantity == '' || message == '') {
+
+        swal({
+          title: "Fields Empty!",
+          text: "Please Check Missing Fields!",
+          icon: "warning",
+          button: "OK",
+
+        });
+      }
+      else {
+
+        swal({
+          title: "Thank You!",
+          text: "Your order placed successfully!",
+          icon: "success",
+          button: "Next!",
+        });
+      }
+    });
+
+    window.sr = ScrollReveal();
+    sr.reveal('.animate-left', {
+      origin: 'left',
+      duration: 1000,
+      distance: '25rem',
+      delay: 300
+
+
+    });
+
+
+    $('.dropdown-menu a.dropdown-toggle').on('click', function (e) {
+      if (!$(this).next().hasClass('show')) {
+        $(this).parents('.dropdown-menu').first().find('.show').removeClass('show');
+      }
+      var $subMenu = $(this).next('.dropdown-menu');
+      $subMenu.toggleClass('show');
+
+
+      $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
+        $('.dropdown-submenu .show').removeClass('show');
+      });
+
+
+      return false;
+    });
+  </script>
+</body>
+
+</html>

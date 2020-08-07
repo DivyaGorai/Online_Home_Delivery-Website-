@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/united/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <title>HOME DELIVERY</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+            color: #444;
+            font-family: calibri;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .login {
+            text-align: center;
+            position: relative;
+            width: 330px;
+        }
+
+        input {
+            width: 100%;
+            border: 0;
+            border-radius: 20px;
+        }
+
+        input {
+            border-bottom: 2px solid #444;
+            padding: 12px 40px 12px 20px;
+        }
+
+        input,
+        a {
+
+            font-size: 16px;
+            font-size: 17px !important;
+            font-weight: 600;
+        }
+
+        .group {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .group i{
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+        
+        p {
+            margin-bottom: 5px;
+        }
+        p a:hover{
+            text-decoration: none;
+        }
+
+        i.fa.fa-empire,
+        a {
+            
+            color: #193d72;
+        }
+
+        i.fa.fa-empire {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input:focus,
+        input:focus::placeholder,
+        input:focus+i {
+            /*color: #ff1464;*/
+
+            color: #193d72;
+
+        }
+
+        input:focus {
+            outline: 0;
+        }
+
+        body::before,
+        body::after {
+            content: "";
+            position: absolute;
+            height: 300px;
+            width: 500px;
+        }
+
+        body::before {
+            
+            background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+
+            bottom: 0;
+            left: 0;
+            clip-path: polygon(0 0, 0 100%, 100% 100%);
+        }
+
+        body::after {
+            
+            background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+
+            top: 0;
+            right: 0;
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
+        }
+
+        .btnn {
+           
+            background: linear-gradient(to right top, #252729, #004d7a, #008793);
+            color: white;
+        }
+
+        .btnn:hover {
+            color: white;
+        }
+
+        .fa-send {
+            color: white;
+            margin-right: 5px;
+
+        }
+
+        .para {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .eye {
+            position: absolute;
+        }
+
+        .hide1 {
+            display: none;
+        }
+
+        @media (max-width: 767px) {
+
+            body::before,
+            body:after {
+                height: 150px;
+                width: 300px;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login">
+        <form action="/login" method="POST">
+            <% if (success_message != ''){ %>
+            <div class="alert alert-dismissible alert-success">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong> <%= success_message %> </strong>
+            </div>
+            <% } %>
+            <% if( error != '') { %>
+            <div class="alert alert-dismissible alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong><%= error %></strong>
+            </div>
+            <% } %>
+
+            <i class="fa fa-empire"></i>
+            <h2>Login</h2>
+            <div class="group">
+                <input type="text" placeholder="Email" name="email" id="email"><i class="fa fa-envelope"></i></div>
+            <div class="group">
+                <input type="password" placeholder="Password" name="password" id="password"><span class="eye"
+                    onclick="myFunction();"><i id="hide1" class="fa fa-eye" style='font-size: 19px'></i><i id="hide2"
+                        class="fa fa-eye-slash" style='font-size: 19px'></i></span></div>
+           
+            <div class="group">
+                </i><input type="submit" class="btnn" value="Login">
+            </div>
+            <p class="para">Forgot ? <a href="/forgot">Password</a></p>
+            <p class="para">Don't have an account ? <a href="/register">Create an account</a></p>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("password");
+            var y = document.getElementById("hide1");
+            var z = document.getElementById("hide2");
+            if (x.type === 'password') {
+                x.type = "text";
+                y.style.display = "block";
+                z.style.display = "none";
+            }
+            else {
+                x.type = "password";
+                y.style.display = "none";
+                z.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>

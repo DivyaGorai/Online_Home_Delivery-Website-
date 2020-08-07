@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+        integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <title>Order Success</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            overflow-x: hidden;
+        }
+
+        .checkboxcontainer input {
+            display: none;
+        }
+
+        .checkboxcontainer {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 15%;
+            margin-top: 2%;
+            left: 47%;
+
+
+            transform: translate(-50%), -50%;
+        }
+
+        .checkboxcontainer .checkmark {
+            display: inline-block;
+            width: 75px;
+            height: 75px;
+            background: #008000;
+            border-color: #83833F;
+            position: absolute;
+            border-radius: 50%;
+            left: 0;
+            top: 0;
+            box-shadow:
+                0px 5px 5px 0 #82e661 inset, 0px 5px 5px 0 #aae597,
+                0px 5px 5px 0 #aae597 inset, 0px 5px 5px 0 #aae597;
+        }
+
+        .checkboxcontainer .checkmark:after {
+            content: "";
+            position: absolute;
+            height: 17px;
+            width: 38px;
+            border-left: 6px solid white;
+            border-bottom: 6px solid white;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-42deg);
+        }
+
+        .order {
+            align-items: center;
+            justify-content: center;
+            font-size: 3.1rem;
+            /* color: rgb(19, 163, 19);*/
+            color: #0b960b;
+            text-align: center;
+            letter-spacing: 1px;
+            font-family: 'Merriweather', serif;
+        }
+
+        hr.solid {
+            border-top: 1px solid #bbb;
+        }
+
+        .box {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 13px;
+            padding: 11px;
+        }
+
+        .we {
+            font-size: 1.3rem;
+            padding-top: 1px;
+            padding-bottom: 4px;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .row {
+            display: flex;
+
+        }
+
+        .row1 {
+            display: flex;
+        }
+
+        .col2 {
+            flex: 50%;
+            text-align: right;
+            justify-content: right;
+            align-items: right;
+            padding-right: 21px;
+        }
+
+        .col3 {
+            flex: 50%;
+            text-align: left;
+            justify-content: left;
+            align-items: left;
+            padding-left: 4px;
+        }
+
+        .column {
+            padding-top: 9px;
+            padding-bottom: 9px;
+            flex: 50%;
+            text-align: right;
+            justify-content: right;
+            align-items: right;
+
+            font-weight: 800;
+            font-size: 18px;
+            font-family: 'Bitter', serif;
+        }
+
+        .column1 {
+            font-family: 'Bitter', serif;
+            padding-top: 9px;
+
+            flex: 50%;
+            text-align: left;
+            justify-content: left;
+            align-items: left;
+            font-weight: 100;
+            font-size: 18px;
+
+        }
+
+        span {
+            color: rgb(22, 97, 209);
+            font-size: 16px;
+        }
+
+        span:hover {
+            color: rgb(47, 47, 235)
+        }
+
+        .email {
+            margin-top: 11px;
+            font-size: 17px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn {
+
+            background-color: black;
+            color: white;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 31px;
+            padding-right: 31px;
+            border-radius: 4px;
+            margin-top: 19px;
+            text-decoration: none;
+            font-size: 21px;
+            font-weight: 500;
+
+        }
+
+        .href {
+            padding: 25px;
+            margin: 7px;
+        }
+
+        .color {
+            background: rgb(238, 236, 236);
+        }
+
+        .id {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 18px;
+            margin: 7px;
+            font-family: 'PT Serif', serif;
+
+            font-weight: 600;
+            padding: 5px;
+        }
+
+        nav {
+            width: 100%;
+            height: 67px;
+            display: flex;
+            background-color: black;
+        }
+
+        .logo {
+            width: 50%;
+            height: 67px;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+
+        }
+
+        .logo h1 {
+            line-height: 67px;
+            padding-left: 50px;
+
+        }
+
+        .menu {
+            width: 50%;
+            height: 67px;
+        }
+
+        .menu ul {
+            width: 100%;
+            height: 67px;
+            display: flex;
+            flex-direction: row;
+            justify-content: right;
+            align-items: center;
+
+
+        }
+
+        .menu ul li {
+            list-style: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+
+        }
+
+        i {
+            color: white;
+        }
+
+        .grey {
+
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .grey1 {
+
+            padding-left: 4px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+
+        }
+
+        .white {
+            background: white;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .white1 {
+            background: white;
+            padding-left: 4px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .white1 p {
+            padding-right: 14px;
+        }
+
+        .white p {
+            padding-right: 14px;
+        }
+
+        .grey p {
+            padding-right: 14px;
+        }
+
+        .phone {
+            color: rgb(82, 82, 189);
+        }
+
+        .button {
+            background: green;
+            color: white;
+            padding-top: 15px;
+            padding-bottom: 9px;
+            padding-left: 41px;
+            padding-right: 41px;
+            font-weight: 500;
+            font-size: 21px;
+            margin-top: 21px;
+            border-radius: 4px;
+            list-style: none;
+            text-decoration: none;
+
+        }
+
+        .span {
+            font-size: 16px;
+            color: black !important;
+
+        }
+
+        .p {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 19px;
+            margin: 7px;
+            font-family: 'PT Serif', serif;
+            letter-spacing: 2px;
+            font-weight: 600;
+            padding: 5px;
+        }
+
+        .fa-print {
+            padding: 6px;
+        }
+
+        @media (max-width: 700px) {
+            .order {
+                font-size: 1.2rem;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .id {
+                font-size: 0.9rem;
+            }
+
+            .we {
+                font-size: 0.9rem;
+                margin-right: 2px;
+            }
+
+            .column {
+                font-size: 0.7rem;
+            }
+
+            .column1 {
+                font-size: 0.7rem;
+            }
+
+            .email {
+                font-size: 0.9rem;
+            }
+
+            span {
+                font-size: 1.1rem;
+            }
+
+            .checkboxcontainer {
+                left: 40%;
+                margin-top: 6%;
+                margin-bottom: 6%;
+
+            }
+
+            .btn {
+                font-size: 15px;
+                padding: 8px 12px;
+            }
+
+            .button {
+                font-size: 15px;
+                padding-top: 11px;
+                padding-bottom: 4px;
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <label class="checkboxcontainer">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+    </label>
+    <h1 class="order">Order Placed Successfully!</h1>
+
+    <div class="p">
+        <p class="id">Order Id:<span> <%= id %> </span></p>
+        <p class="p"> Payment Method:<span class="span"> Cash On Delivery</span></p>
+    </div>
+    <hr class="solid">
+    <div class="box">
+        <h3 class="we">We are processing your order , here are the details.</h3>
+        <div class="row">
+            <div class="column">
+                <div class="grey">
+                    <p>Name:</p>
+                </div>
+                <div class="white">
+                    <p>Phone:</p>
+                </div>
+                <div class="grey">
+                    <p>Veg/Non-veg:</p>
+                </div>
+                <div class="white">
+                    <p> Date
+                        :</p>
+                </div>
+                <div class="grey">
+                    <p>Quantity:</p>
+                </div>
+                <div class="white">
+                    <p>Order At:</p>
+                </div>
+                <div class="grey">
+                    <p>Order Address:</p>
+                </div>
+            </div>
+            <div class="column1">
+                <div class="grey1">
+                    <p><%= username %></p>
+                </div>
+                <div class="white1">
+                    <p class="phone">(+91) <%= phone %></p>
+                </div>
+                <div class="grey1">
+                    <p> <%= choose %></p>
+                </div>
+                <div class="white1">
+                    <p> <%= date %></p>
+                </div>
+                <div class="grey1">
+                    <p> <%= quantity %></p>
+                </div>
+                <div class="white1">
+                    <p> <%= breakfast %> <%= lunch %> <%= dinner %></p>
+                </div>
+                <div class="grey1">
+                    <p> <%= message %></p>
+                </div>
+            </div>
+        </div>
+        <h3 class="email">We will email you at <span> <%= email %> </span> for an order confirmation with details.</h3>
+        <div class="href">
+            <div class="row1">
+                <div class="col2">
+                    <a href="/" class="btn">Back to home</a>
+                </div>
+                <div class="col3">
+                    <a href="" class="button"><i class="fa fa-print" aria-hidden="true"></i>Print</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

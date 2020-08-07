@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/united/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <title>HOME DELIVERY</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+            color: #444;
+            font-family: calibri;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .register {
+            text-align: center;
+            position: relative;
+            width: 280px;
+        }
+
+        input {
+            width: 100%;
+            border: 0;
+            border-radius: 20px;
+        }
+
+        input {
+            border-bottom: 2px solid #444;
+            padding: 12px 40px 12px 20px;
+        }
+
+        input,
+        p {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        input,
+        a {
+            font-size: 17px;
+        }
+
+        .group {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .group i {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+        /*button{
+        padding: 12px;
+        background-image: linear-gradient(57deg,#ff1464,purple);
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+    button, button i{
+        color: #fff;
+    }
+    button i{
+        margin-right: 5px;
+    }*/
+        p {
+            margin-bottom: 20px;
+        }
+
+        i.fa.fa-empire,
+        a {
+            /* color: #ff1464;*/
+            color: #193d72;
+        }
+
+        i.fa.fa-empire {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input:focus,
+        input:focus::placeholder,
+        input:focus+i {
+            /*color: #ff1464;*/
+            color: #193d72;
+
+        }
+
+        input:focus {
+            outline: 0;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            height: 300px;
+            width: 500px;
+
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            height: 300px;
+            width: 500px;
+        }
+
+        body::before {
+            /*background-image: linear-gradient(to right,#ff1464,purple);*/
+            background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+            bottom: 0;
+            left: 0;
+            clip-path: polygon(0 0, 0 100%, 100% 100%);
+        }
+
+        body::after {
+            /*background-image: linear-gradient(to right,purple,#ff1464);*/
+            background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+            top: 0;
+            right: 0;
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
+        }
+
+        .btnn {
+            /* background:  linear-gradient(to right,purple,#ff1464);*/
+            background-image: linear-gradient(to right top, #051937, #004d7a, #008793);
+            color: white;
+        }
+
+        .btnn:hover {
+            color: white;
+        }
+
+        @media (max-width: 767px) {
+
+            body::before,
+            body:after {
+                height: 150px;
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register">
+        <form action="/register" method="POST">
+
+            
+            <i class="fa fa-empire"></i>
+            <h2>SignIn</h2>
+            <% if(typeof err != 'undefined') {%>
+            <div class="alert alert-dismissible alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong><%= err %></strong>
+            </div>
+            <% } %>
+            <div class="group">
+                <input type="email" name="email" id="email" autocomplete="off" placeholder="Email"
+                    value="<%= typeof email != 'undefined' ? email : '' %>"><i class="fa fa-envelope"></i>
+            </div>
+            <div class="group">
+                <input type="text" name="username" id="username" autocomplete="off" placeholder="Username"
+                    value="<%= typeof username != 'undefined' ? username : '' %>"><i class="fa fa-user"></i>
+            </div>
+            <div class="group">
+                <input type="password" name="password" id="password" autocomplete="off" placeholder="Password"> <i
+                    class="fa fa-lock"></i>
+            </div>
+            <div class="group">
+                <input type="password" name="confirmpassword" id="confirmpassword" autocomplete="off"
+                    placeholder="Confirm Password"><i class="fa fa-lock" aria-hidden="true"></i>
+            </div>
+            <div class="group">
+                <input type="submit" class="btnn" value="CONTINUE">
+            </div>
+            <p class="para">Already have an account? <a href="/login">Login</a></p>
+        </form>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
